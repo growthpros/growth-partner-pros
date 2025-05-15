@@ -1,0 +1,967 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growth Partner Pros - Turn AI Disruption into Your Greatest Advantage</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0A2044;
+            --coral-light: #FF6A5E;
+            --coral-medium: #FF8350;
+            --coral-deep: #E65C3C;
+            --teal: #0F8B8D;
+            --soft-gray: #F4F4F4;
+            --mid-gray: #CCCCCC;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            background-color: #fff;
+        }
+        
+        .bg-navy {
+            background-color: var(--navy);
+        }
+        
+        .bg-teal {
+            background-color: var(--teal);
+        }
+        
+        .bg-soft-gray {
+            background-color: var(--soft-gray);
+        }
+        
+        .text-navy {
+            color: var(--navy);
+        }
+        
+        .text-teal {
+            color: var(--teal);
+        }
+        
+        .text-coral {
+            color: var(--coral-medium);
+        }
+        
+        .border-coral {
+            border-color: var(--coral-medium);
+        }
+        
+        .btn-primary {
+            background-color: var(--coral-medium);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--coral-deep);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+        
+        .btn-secondary {
+            background-color: var(--teal);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #0c7476;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+        
+        .btn-outline {
+            border: 2px solid var(--navy);
+            color: var(--navy);
+            padding: 10px 22px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--navy);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, var(--coral-light), var(--coral-deep));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(90deg, var(--coral-light), var(--coral-deep));
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(10,32,68,0.9), rgba(10,32,68,0.9)), url('https://source.unsplash.com/random/1600x900/?technology') no-repeat center center;
+            background-size: cover;
+        }
+        
+        .section-divider {
+            height: 4px;
+            width: 80px;
+            background: linear-gradient(90deg, var(--coral-light), var(--coral-deep));
+            margin: 2rem 0;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .service-card {
+            border-top: 4px solid var(--teal);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            border-top: 4px solid var(--coral-medium);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Navigation */
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(90deg, var(--coral-light), var(--coral-deep));
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        /* Hide all sections initially */
+        .page-section {
+            display: none;
+        }
+        
+        /* Show only the active section */
+        .page-section.active {
+            display: block;
+        }
+        
+        /* Testimonial cards */
+        .testimonial-card {
+            background-color: white;
+            border-left: 4px solid var(--coral-medium);
+        }
+        
+        /* Blog styles */
+        .blog-card {
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .blog-card:hover {
+            border-bottom: 3px solid var(--teal);
+            transform: translateY(-5px);
+        }
+        
+        /* Contact form */
+        .form-input {
+            border: 1px solid var(--mid-gray);
+            padding: 12px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--teal);
+            box-shadow: 0 0 0 3px rgba(15,139,141,0.2);
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* For printing/PDF export */
+         {
+            .page-section {
+                display: block !important;
+                page-break-inside: avoid;
+                margin-bottom: 40px;
+            }
+            
+            nav, .hide-on-print {
+                display: none !important;
+            }
+        }
+
+        /* Mobile menu */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(-100%);
+        }
+        
+        #mobile-menu.open {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white py-4 px-6 shadow-md fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="h-10 w-10 rounded-full gradient-bg flex items-center justify-center">
+                    <span class="text-white font-bold text-xl">GP</span>
+                </div>
+                <span class="text-navy font-bold text-xl">Growth Partner Pros</span>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-navy font-medium active" onclick="showSection('home')">Home</a>
+                <a href="#services" class="nav-link text-navy font-medium" onclick="showSection('services')">Services</a>
+                <a href="#about" class="nav-link text-navy font-medium" onclick="showSection('about')">About Us</a>
+                <a href="#blog" class="nav-link text-navy font-medium" onclick="showSection('blog')">Blog</a>
+                <a href="#contact" class="nav-link text-navy font-medium" onclick="showSection('contact')">Contact</a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-navy focus:outline-none" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed top-0 left-0 h-full w-64 bg-navy z-50 shadow-lg p-6">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center space-x-2">
+                <div class="h-10 w-10 rounded-full gradient-bg flex items-center justify-center">
+                    <span class="text-white font-bold text-xl">GP</span>
+                </div>
+                <span class="text-white font-bold text-xl">GPP</span>
+            </div>
+            <button class="text-white focus:outline-none" onclick="toggleMobileMenu()">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-6">
+            <a href="#home" class="text-white font-medium" onclick="showSectionAndCloseMobileMenu('home')">Home</a>
+            <a href="#services" class="text-white font-medium" onclick="showSectionAndCloseMobileMenu('services')">Services</a>
+            <a href="#about" class="text-white font-medium" onclick="showSectionAndCloseMobileMenu('about')">About Us</a>
+            <a href="#blog" class="text-white font-medium" onclick="showSectionAndCloseMobileMenu('blog')">Blog</a>
+            <a href="#contact" class="text-white font-medium" onclick="showSectionAndCloseMobileMenu('contact')">Contact</a>
+        </div>
+    </div>
+    
+    <div class="pt-20">
+        <!-- Home Section -->
+        <section id="home" class="page-section active">
+            <div class="hero-section py-20 px-6 text-white">
+                <div class="container mx-auto">
+                    <div class="max-w-3xl">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-4">TURN AI DISRUPTION INTO YOUR GREATEST ADVANTAGE</h1>
+                        <div class="section-divider"></div>
+                        <p class="text-xl md:text-2xl mb-8">AI-Driven Transformation for Leaders & Organizations</p>
+                        <p class="text-lg mb-8">Growth Partner Pros helps forward-thinking leaders and businesses harness the power of AI to achieve 10x productivity, streamline operations, and create competitive advantage in today's rapidly evolving landscape.</p>
+                        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                            <a href="#contact" class="btn-primary" onclick="showSection('contact')">BOOK A FREE CONSULTATION</a>
+                            <a href="#services" class="btn-outline bg-transparent text-white border-white" onclick="showSection('services')">EXPLORE SERVICES</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Value Propositions -->
+            <div class="py-16 px-6 bg-soft-gray">
+                <div class="container mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">UNLOCK YOUR AI POTENTIAL</h2>
+                        <div class="section-divider mx-auto"></div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white p-8 rounded-lg shadow-lg card-hover">
+                            <h3 class="text-2xl font-bold mb-4 text-navy">FOR LEADERS & PROFESSIONALS</h3>
+                            <p class="mb-6">Future-proof your career, master AI tools, and become irreplaceable in the age of automation.</p>
+                            <a href="#services" class="text-coral font-bold flex items-center" onclick="showSection('services')">
+                                Learn More <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                        
+                        <div class="bg-white p-8 rounded-lg shadow-lg card-hover">
+                            <h3 class="text-2xl font-bold mb-4 text-navy">FOR ORGANIZATIONS</h3>
+                            <p class="mb-6">Transform operations, drive innovation, and achieve scalable growth through strategic AI implementation.</p>
+                            <a href="#services" class="text-coral font-bold flex items-center" onclick="showSection('services')">
+                                Learn More <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Results Section -->
+            <div class="py-16 px-6">
+                <div class="container mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">THE 10X DIFFERENCE</h2>
+                        <div class="section-divider mx-auto"></div>
+                        <p class="text-xl">Our clients consistently achieve remarkable results:</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                        <div class="text-center">
+                            <div class="text-5xl font-bold gradient-text mb-4">40-60%</div>
+                            <p>productivity improvements in key processes</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="text-5xl font-bold gradient-text mb-4">90%</div>
+                            <p>reduction in time spent on repetitive tasks</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="text-5xl font-bold gradient-text mb-4">10x</div>
+                            <p>output without increasing headcount</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="text-5xl font-bold gradient-text mb-4">ROI</div>
+                            <p>measurable within weeks, not months</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial -->
+                    <div class="max-w-3xl mx-auto">
+                        <div class="testimonial-card p-8 shadow-lg">
+                            <div class="text-2xl text-coral mb-4">"</div>
+                            <p class="text-lg italic mb-6">This training was life-changing. It has completely transformed how I think about work. I was overwhelmed with the amount of things I needed to do. Now I have frameworks, tools, and support to make it manageable and actually fun. I feel powerful again.</p>
+                            <div class="font-bold">— Startup Founder</div>
+                        </div>
+                        
+                        <div class="mt-8 text-center">
+                            <a href="#about" class="btn-outline" onclick="showSection('about')">SEE MORE SUCCESS STORIES</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- About Caroline Short -->
+            <div class="py-16 px-6 bg-navy text-white">
+                <div class="container mx-auto">
+                    <div class="max-w-4xl mx-auto">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">MEET CAROLINE HINTON</h2>
+                        <div class="section-divider"></div>
+                        <p class="text-xl mb-8">Award-winning executive-turned-AI strategist with over 20 years of leadership experience at Microsoft, PwC, Thomson Reuters, and Google.</p>
+                        <p class="mb-8">Caroline helps leaders and organizations embrace disruption, unlock 10x growth, and transform not only their operations—but their lives.</p>
+                        <a href="#about" class="btn-primary" onclick="showSection('about')">LEARN MORE ABOUT CAROLINE</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Services Section -->
+        <section id="services" class="page-section">
+            <div class="hero-section py-20 px-6 text-white">
+                <div class="container mx-auto">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">SERVICES</h1>
+                    <div class="section-divider"></div>
+                    <p class="text-xl max-w-3xl">Growth Partner Pros offers a range of AI transformation services designed to meet you where you are and take you where you want to go.</p>
+                </div>
+            </div>
+            
+            <!-- For Individuals & Professionals -->
+            <div class="py-16 px-6">
+                <div class="container mx-auto">
+                    <h2 class="text-3xl font-bold mb-6 text-navy">FOR INDIVIDUALS & PROFESSIONALS</h2>
+                    <div class="section-divider"></div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-12">
+                        <div class="service-card bg-white p-8 rounded shadow-lg">
+                            <h3 class="text-2xl font-bold mb-4 text-navy">AI FOUNDATIONS PROGRAM</h3>
+                            <p class="mb-6">Our signature training experience that gives professionals the clarity, tools, and confidence to work effectively with AI — no tech background required.</p>
+                            
+                            <ul class="mb-8 space-y-4">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-coral mt-1 mr-2"></i>
+                                    <span>Master real-world AI tools</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-coral mt-1 mr-2"></i>
+                                    <span>Learn proven frameworks for applying AI to your unique role</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-coral mt-1 mr-2"></i>
+                                    <span>Shift your mindset to lead — not lag — in the AI-powered workplace</span>
+                                </li>
+                            </ul>
+                            
+                            <a href="#contact" class="btn-primary" onclick="showSection('contact')">LEARN MORE</a>
+                        </div>
+                        
+                        <div class="service-card bg-white p-8 rounded shadow-lg">
+                            <h3 class="text-2xl font-bold mb-4 text-navy">EXECUTIVE AI COACHING</h3>
+                            <p class="mb-6">Private 1:1 sessions for leaders navigating transformation. Whether you're redefining strategy, communicating change, or implementing new tools — we're here to help you lead with clarity, courage, and conviction.</p>
+                            
+                            <ul class="mb-8 space-y-4">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-coral mt-1 mr-2"></i>
+                                    <span>Personalized guidance for your specific leadership challenges</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-coral mt-1 mr-2"></i>
+                                    <span>Strategic implementation planning for your organization</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-coral mt-1 mr-2"></i>
+                                    <span>Communication frameworks for leading change</span>
+                                </li>
+                            </ul>
+                            
+                            <a href="#contact" class="btn-primary" onclick="showSection('contact')">BOOK A CONSULTATION</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- For Organizations -->
+            <div class="py-16 px-6 bg-soft-gray">
+                <div class="container mx-auto">
+                    <h2 class="text-3xl font-bold mb-6 text-navy">FOR ORGANIZATIONS</h2>
+                    <div class="section-divider"></div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-12">
+                        <div class="service-card bg-white p-8 rounded shadow-lg">
+                            <h3 class="text-2xl font-bold mb-4 text-navy">AI READINESS AUDIT & ROADMAP</h3>
+                            <p class="mb-6">Quickly surface your highest-impact opportunities for AI across departments — without disrupting operations. Includes a tailored implementation roadmap and stakeholder-ready summary.</p>
+                            
+                            <ul class="mb-8 space-y-4">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-coral mt-1 mr-2"></i>
+                                    <span>Comprehensive AI opportunity assessment</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-coral mt-1 mr-2"></i>
+                                    <span>Custom implementation roadmap</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-coral mt-1 mr-2"></i>
+                                    <span>Executive presentation with ROI projections</span>
+                                </li>
+                            </ul>
+                            
+                            <a href="#contact" class="btn-primary" onclick="showSection('contact')">REQUEST PROPOSAL</a>
+                        </div>
+                        
+                        <div class="service-card bg-white p-8 rounded shadow-lg">
+                            <h3 class="text-2xl font-bold mb-4 text-navy">AI TRAINING & TEAM ENABLEMENT</h3>
+                            <p class="mb-6">Equip every function with role-specific skills and use cases. Programs range from "white belt" AI fluency to hands-on tactical implementation for real workflows.</p>
+                            
+                            <ul class="mb-8 space-y-4">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-coral mt-1 mr-2"></i>
+                                    <span>Customized training for different departments</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-coral mt-1 mr-2"></i>
+                                    <span>Hands-on workshops with your actual workflows</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-coral mt-1 mr-2"></i>
+                                    <span>Implementation support and ongoing guidance</span>
+                                </li>
+                            </ul>
+                            
+                            <a href="#contact" class="btn-primary" onclick="showSection('contact')">LEARN MORE</a>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10">
+                        <div class="service-card bg-white p-8 rounded shadow-lg">
+                            <h3 class="text-2xl font-bold mb-4 text-navy">CUSTOM AI AGENT DESIGN & AUTOMATION</h3>
+                            <p class="mb-6">Whether you need an inbox-taming CustomGPT or a research assistant that builds real-time briefs, we build and implement high-impact, no-code AI agents tailored to your business.</p>
+                            
+                            <p class="font-bold mb-4">We specialize in:</p>
+                            <ul class="mb-8 space-y-4">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-coral mt-1 mr-2"></i>
+                                    <span>CustomGPTs designed around your workflow</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-coral mt-1 mr-2"></i>
+                                    <span>Research, content, and data summarization agents</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-coral mt-1 mr-2"></i>
+                                    <span>Internal knowledge assistants & documentation generators</span>
+                                </li>
+                            </ul>
+                            
+                            <a href="#contact" class="btn-primary" onclick="showSection('contact')">DISCUSS YOUR NEEDS</a>
+                        </div>
+                        
+                        <div class="service-card bg-white p-8 rounded shadow-lg">
+                            <h3 class="text-2xl font-bold mb-4 text-navy">FRACTIONAL AI STRATEGY & ADVISORY</h3>
+                            <p class="mb-6">Senior-level guidance for navigating digital transformation. We help you plan responsibly, communicate effectively, and implement with confidence — especially in regulated or legacy-heavy environments.</p>
+                            
+                            <ul class="mb-8 space-y-4">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-coral mt-1 mr-2"></i>
+                                    <span>Executive-level strategic guidance</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-coral mt-1 mr-2"></i>
+                                    <span>Change management and communication support</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-coral mt-1 mr-2"></i>
+                                    <span>Ethical implementation and governance frameworks</span>
+                                </li>
+                            </ul>
+                            
+                            <a href="#contact" class="btn-primary" onclick="showSection('contact')">SCHEDULE A DISCOVERY CALL</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Not Sure CTA -->
+            <div class="py-16 px-6 bg-teal text-white text-center">
+                <div class="container mx-auto max-w-3xl">
+                    <h3 class="text-3xl font-bold mb-4">NOT SURE WHERE TO START?</h3>
+                    <p class="text-xl mb-8">Book a complimentary 30-minute AI Strategy Session to discuss your goals and identify the best path forward.</p>
+                    <a href="#contact" class="btn-primary" onclick="showSection('contact')">BOOK FREE STRATEGY SESSION</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about" class="page-section">
+            <div class="hero-section py-20 px-6 text-white">
+                <div class="container mx-auto">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">ABOUT GROWTH PARTNER PROS</h1>
+                    <div class="section-divider"></div>
+                    <p class="text-xl max-w-3xl">We help people and organizations step into the most transformative era of their lives and careers by guiding them through AI disruption with clarity, courage, and compassion.</p>
+                </div>
+            </div>
+            
+            <!-- About Caroline -->
+            <div class="py-16 px-6">
+                <div class="container mx-auto">
+                    <div class="max-w-4xl mx-auto">
+                        <h2 class="text-3xl font-bold mb-6 text-navy">ABOUT CAROLINE HINTON</h2>
+                        <div class="section-divider"></div>
+                        
+                        <p class="text-lg mb-6">Caroline Hinton is an award-winning executive-turned-AI strategist helping leaders and organizations embrace disruption, unlock 10x growth, and transform not only their operations—but their lives.</p>
+                        
+                        <p class="mb-6">With over 20 years of executive leadership experience at Microsoft, PwC, Deloitte, Sage, Thomson Reuters, Insight, and Google, Caroline brings a rare blend of strategic business insight and real-world technology expertise.</p>
+                        
+                        <p class="mb-6">She has been recognized twice as one of the Power 50: Women of the Channel and holds a reputation as a trusted advisor to C-suite leaders navigating technological change.</p>
+                        
+                        <p class="mb-6">Caroline's approach integrates life-altering insight with business acceleration. AI isn't just about tools and tasks; it's about reclaiming time, clarity, and choice. Her coaching enables whole-person, whole-business transformation.</p>
+                        
+                        <p class="italic mb-10">"My mission is grounded in deep personal transformation. My life was changed by hardship, which rewired my leadership approach. Now, I show others that breakdowns can become breakthroughs—with AI as the super-accelerant."</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Our Approach -->
+            <div class="py-16 px-6 bg-soft-gray">
+                <div class="container mx-auto">
+                    <h2 class="text-3xl font-bold mb-6 text-navy text-center">OUR APPROACH</h2>
+                    <div class="section-divider mx-auto"></div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mt-12">
+                        <div class="bg-white p-8 rounded shadow-lg">
+                            <h3 class="text-xl font-bold mb-4 text-navy">Built for Leaders, Backed by Experience</h3>
+                            <p>With two decades of executive leadership, Caroline brings the wisdom of battle-tested strategy to today's fast-evolving AI frontier. She's walked the walk—and now she lights the path for others.</p>
+                        </div>
+                        
+                        <div class="bg-white p-8 rounded shadow-lg">
+                            <h3 class="text-xl font-bold mb-4 text-navy">A Calling, Not a Career</h3>
+                            <p>Caroline's mission is grounded in deep personal transformation. Her life was changed by hardship, which rewired her leadership approach. Now, she shows others that breakdowns can become breakthroughs—with AI as the super-accelerant.</p>
+                        </div>
+                        
+                        <div class="bg-white p-8 rounded shadow-lg">
+                            <h3 class="text-xl font-bold mb-4 text-navy">Good Tech in the Hands of Good People</h3>
+                            <p>Caroline sees the potential for both dystopia and liberation in AI. Her goal: put powerful tools in the hands of conscious leaders—those who will use it for good. One person can spark change. One organization can ripple transformation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonials -->
+            <div class="py-16 px-6">
+                <div class="container mx-auto">
+                    <h2 class="text-3xl font-bold mb-6 text-navy text-center">CLIENT SUCCESS STORIES</h2>
+                    <div class="section-divider mx-auto"></div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-12">
+                        <div class="testimonial-card p-8 shadow-lg">
+                            <div class="text-2xl text-coral mb-4">"</div>
+                            <p class="text-lg italic mb-6">Having attended Caroline Hinton's series of sessions on using AI, I can say that her ability to connect theoretical knowledge with practical applications made each session valuable, thought-provoking, and immediately actionable. From AI basics to force-multiplying work helping teams, Caroline teaches a framework approach for using AI that goes far beyond just using prompts.</p>
+                            <div class="font-bold">— Director, Organizational Strategy & Innovation</div>
+                        </div>
+                        
+                        <div class="testimonial-card p-8 shadow-lg">
+                            <div class="text-2xl text-coral mb-4">"</div>
+                            <p class="text-lg italic mb-6">We were skeptical at first. There's so much hype around AI. But this wasn't fluff. The ROI was immediate. One of our teams identified a process improvement during week two that saved us more than the program cost.</p>
+                            <div class="font-bold">— COO, Mid-sized SaaS Company</div>
+                        </div>
+                        
+                        <div class="testimonial-card p-8 shadow-lg">
+                            <div class="text-2xl text-coral mb-4">"</div>
+                            <p class="text-lg italic mb-6">Before this training, I didn't know where to begin. I'd been experimenting with ChatGPT but didn't have a clue how to apply it strategically. Caroline's framework gave me clarity, confidence, and competence.</p>
+                            <div class="font-bold">— VP, Marketing</div>
+                        </div>
+                        
+                        <div class="testimonial-card p-8 shadow-lg">
+                            <div class="text-2xl text-coral mb-4">"</div>
+                            <p class="text-lg italic mb-6">I thought this was just for technical people. I was wrong. This training gave me the language and understanding to lead our AI transformation. I can now have informed conversations with my team and push the right strategic initiatives.</p>
+                            <div class="font-bold">— SVP, Operations</div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-12">
+                        <a href="#contact" class="btn-primary" onclick="showSection('contact')">BOOK A CONSULTATION</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Blog Section -->
+        <section id="blog" class="page-section">
+            <div class="hero-section py-20 px-6 text-white">
+                <div class="container mx-auto">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">INSIGHTS</h1>
+                    <div class="section-divider"></div>
+                    <p class="text-xl max-w-3xl">Practical strategies, frameworks, and insights to help you navigate the AI revolution.</p>
+                </div>
+            </div>
+            
+            <!-- Blog Posts -->
+            <div class="py-16 px-6">
+                <div class="container mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                        <div class="blog-card bg-white rounded-lg shadow-lg overflow-hidden">
+                            <div class="h-60 bg-navy flex items-center justify-center">
+                                <i class="fas fa-robot text-6xl text-white opacity-50"></i>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-3 text-navy">The AI Role Optimization Framework: How to Become Irreplaceable in the Age of Automation</h3>
+                                <p class="text-gray-600 mb-4">Learn how to identify which parts of your role should be enhanced by AI vs. which should remain human-centered.</p>
+                                <a href="#" class="text-coral font-bold flex items-center">
+                                    Read More <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="blog-card bg-white rounded-lg shadow-lg overflow-hidden">
+                            <div class="h-60 bg-teal flex items-center justify-center">
+                                <i class="fas fa-brain text-6xl text-white opacity-50"></i>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-3 text-navy">From AI Anxiety to AI Advantage: How Leaders Can Transform Team Resistance into Innovation</h3>
+                                <p class="text-gray-600 mb-4">Address the psychological barriers to AI adoption in organizations and learn how to build AI confidence in your team.</p>
+                                <a href="#" class="text-coral font-bold flex items-center">
+                                    Read More <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="blog-card bg-white rounded-lg shadow-lg overflow-hidden">
+                            <div class="h-60 gradient-bg flex items-center justify-center">
+                                <i class="fas fa-chart-line text-6xl text-white opacity-50"></i>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-3 text-navy">The 10x Executive: How C-Suite Leaders Are Using AI to Radically Transform Decision-Making</h3>
+                                <p class="text-gray-600 mb-4">Discover how executives are using AI for strategic thinking, not just operational efficiency.</p>
+                                <a href="#" class="text-coral font-bold flex items-center">
+                                    Read More <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="blog-card bg-white rounded-lg shadow-lg overflow-hidden">
+                            <div class="h-60 bg-navy flex items-center justify-center">
+                                <i class="fas fa-road text-6xl text-white opacity-50"></i>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-3 text-navy">AI Implementation Roadmap: The First 90 Days That Will Transform Your Business</h3>
+                                <p class="text-gray-600 mb-4">A practical timeline for organizations beginning their AI journey with specific milestones and success metrics.</p>
+                                <a href="#" class="text-coral font-bold flex items-center">
+                                    Read More <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="blog-card bg-white rounded-lg shadow-lg overflow-hidden">
+                            <div class="h-60 bg-teal flex items-center justify-center">
+                                <i class="fas fa-tools text-6xl text-white opacity-50"></i>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-3 text-navy">Beyond ChatGPT: The AI Tools Pipeline Every Business Needs in 2025</h3>
+                                <p class="text-gray-600 mb-4">Compare and contrast various AI tools for different business functions with a decision framework for selecting the right tools.</p>
+                                <a href="#" class="text-coral font-bold flex items-center">
+                                    Read More <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="blog-card bg-white rounded-lg shadow-lg overflow-hidden">
+                            <div class="h-60 gradient-bg flex items-center justify-center">
+                                <i class="fas fa-sitemap text-6xl text-white opacity-50"></i>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-3 text-navy">The Human-AI Partnership: Building Teams Where Humans and AI Each Do What They Do Best</h3>
+                                <p class="text-gray-600 mb-4">Explore the philosophical and practical aspects of human-AI collaboration with frameworks for designing optimal workflows.</p>
+                                <a href="#" class="text-coral font-bold flex items-center">
+                                    Read More <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Subscribe CTA -->
+            <div class="py-16 px-6 bg-teal text-white text-center">
+                <div class="container mx-auto max-w-3xl">
+                    <h3 class="text-3xl font-bold mb-4">STAY AHEAD OF THE AI CURVE</h3>
+                    <p class="text-xl mb-8">Subscribe to our newsletter for the latest AI insights, strategies, and success stories delivered directly to your inbox.</p>
+                    
+                    <form class="max-w-xl mx-auto flex flex-col sm:flex-row gap-4">
+                        <input type="email" placeholder="Your email address" class="form-input flex-1 py-3 px-4 rounded-lg text-gray-800" required>
+                        <button type="submit" class="btn-primary whitespace-nowrap">SUBSCRIBE</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="page-section">
+            <div class="hero-section py-20 px-6 text-white">
+                <div class="container mx-auto">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">GET IN TOUCH</h1>
+                    <div class="section-divider"></div>
+                    <p class="text-xl max-w-3xl">Ready to transform your approach to AI? Have questions about how we can help you achieve 10x results? We'd love to hear from you.</p>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="py-16 px-6">
+                <div class="container mx-auto max-w-4xl">
+                    <div class="bg-white p-8 md:p-12 rounded-lg shadow-lg">
+                        <form>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label class="block text-gray-700 mb-2 font-medium">First Name *</label>
+                                    <input type="text" class="form-input" required>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 mb-2 font-medium">Last Name *</label>
+                                    <input type="text" class="form-input" required>
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label class="block text-gray-700 mb-2 font-medium">Email Address *</label>
+                                    <input type="email" class="form-input" required>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 mb-2 font-medium">Phone Number</label>
+                                    <input type="tel" class="form-input">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2 font-medium">Company/Organization</label>
+                                <input type="text" class="form-input">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2 font-medium">I'm interested in: *</label>
+                                <select class="form-input" required>
+                                    <option value="" selected disabled>Please select</option>
+                                    <option value="AI Foundations Program">AI Foundations Program</option>
+                                    <option value="Executive AI Coaching">Executive AI Coaching</option>
+                                    <option value="AI Readiness Audit">AI Readiness Audit & Roadmap</option>
+                                    <option value="AI Training">AI Training & Team Enablement</option>
+                                    <option value="Custom AI Agents">Custom AI Agent Design</option>
+                                    <option value="Fractional AI Strategy">Fractional AI Strategy & Advisory</option>
+                                    <option value="Other">Other (please specify)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2 font-medium">Message *</label>
+                                <textarea rows="5" class="form-input" required></textarea>
+                            </div>
+                            
+                            <div class="text-center">
+                                <button type="submit" class="btn-primary px-12">SEND MESSAGE</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="mt-16 text-center">
+                        <h3 class="text-2xl font-bold mb-6 text-navy">OTHER WAYS TO CONNECT</h3>
+                        
+                        <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-12">
+                            <div>
+                                <div class="text-coral text-3xl mb-2">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <p class="font-medium"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d7b4b6a5b8bbbeb9b297b0a5b8a0a3bfa7b6a5a3b9b2a5a7a5b8a4f9b4b8ba">[email&#160;protected]</a></p>
+                            </div>
+                            
+                            <div>
+                                <div class="text-coral text-3xl mb-2">
+                                    <i class="fab fa-linkedin"></i>
+                                </div>
+                                <p class="font-medium">Connect on LinkedIn</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-navy text-white py-12 px-6">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-10">
+                <div class="flex items-center space-x-2 mb-6 md:mb-0">
+                    <div class="h-10 w-10 rounded-full gradient-bg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">GP</span>
+                    </div>
+                    <span class="text-white font-bold text-xl">Growth Partner Pros</span>
+                </div>
+                
+                <div class="flex space-x-8">
+                    <a href="#home" onclick="showSection('home')" class="hover:text-coral transition-colors">Home</a>
+                    <a href="#services" onclick="showSection('services')" class="hover:text-coral transition-colors">Services</a>
+                    <a href="#about" onclick="showSection('about')" class="hover:text-coral transition-colors">About</a>
+                    <a href="#blog" onclick="showSection('blog')" class="hover:text-coral transition-colors">Blog</a>
+                    <a href="#contact" onclick="showSection('contact')" class="hover:text-coral transition-colors">Contact</a>
+                </div>
+                
+                <div class="flex space-x-6 mt-6 md:mt-0">
+                    <a href="#" class="text-white hover:text-coral transition-colors">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-coral transition-colors">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-coral transition-colors">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <hr class="border-gray-700 mb-10">
+            
+            <div class="text-center text-sm text-gray-400">
+                <p>&copy; 2025 Growth Partner Pros. All rights reserved.</p>
+                <p class="mt-2">Turn AI disruption into your greatest advantage.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Show section function
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show the selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Update active class in navigation
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + sectionId) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('open');
+        }
+        
+        // Show section and close mobile menu
+        function showSectionAndCloseMobileMenu(sectionId) {
+            showSection(sectionId);
+            toggleMobileMenu();
+        }
+        
+        // For PDF export, make all sections visible
+        function showAllSectionsForPrint() {
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(section => {
+                section.style.display = 'block';
+            });
+        }
+        
+        // If this is being loaded for printing, show all sections
+        if (window.matchMedia('print').matches) {
+            showAllSectionsForPrint();
+        }
+    </script>
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDjmwdus1U6jysfdK2N6U2cxuuiQhCdaEjxuYVlCN3wTmBzguv9RUyHAAnR7esaG0U4g3qN8gCshbN6Ar2zbL4rJmY4J%2FSOMfbzDGJ0YGjwngGKkchnd8g2wymzwMGzrNT8GnVSbtUBXiRJDRVWMHLynZH0OwdA0BdG0XrcgWjZn05PcR%2FYLZ900LnZ4DIUu9un5H8B8JrNOs4CeVCAPfj14J2jmo9d%2FzcJ9CQM9IBRN4vtW%2F6BjRrb02iZbuGQ8v%2FgHD0NY0%2FLAV3MjQrJRKWFZ9pS8faDXRLsFx9MXScHMtncyvLLhxDgNwokA3eNVMhuqyHubrQwG4dG6EweXGoyl9czLrbdMyU05jZvEzaxNRyHeb1rMy%2BzTtnLsI8EAP3zWR03dK5O%2FT3gHzgi5kKVqTe7kiGp9rhcZpHxxKmVHihX5TXrKZvBBrBbphiEQx1eqWSqTyvXv1RzJuV7T%2FNHrfqtsSKlQUJQNHfkE6kB453Hyy%2FgtgribfTgx%2FY0V90A%3D%3D";
+        window.__genspark_locale = "en-US";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDjmwdus1U6jysfdK2N6U2cxuuiQhCdaEjxuYVlCN3wTmBzguv9RUyHAAnR7esaG0U4g3qN8gCshbN6Ar2zbL4rJmY4J/SOMfbzDGJ0YGjwngGKkchnd8g2wymzwMGzrNT8GnVSbtUBXiRJDRVWMHLynZH0OwdA0BdG0XrcgWjZn05PcR/YLZ900LnZ4DIUu9un5H8B8JrNOs4CeVCAPfj14J2jmo9d/zcJ9CQM9IBRN4vtW/6BjRrb02iZbuGQ8v/gHD0NY0/LAV3MjQrJRKWFZ9pS8faDXRLsFx9MXScHMtncyvLLhxDgNwokA3eNVMhuqyHubrQwG4dG6EweXGoyl9czLrbdMyU05jZvEzaxNRyHeb1rMy+zTtnLsI8EAP3zWR03dK5O/T3gHzgi5kKVqTe7kiGp9rhcZpHxxKmVHihX5TXrKZvBBrBbphiEQx1eqWSqTyvXv1RzJuV7T/NHrfqtsSKlQUJQNHfkE6kB453Hyy/gtgribfTgx/Y0V90A==";
+    </script>
+    
